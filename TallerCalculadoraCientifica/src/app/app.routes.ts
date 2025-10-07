@@ -7,11 +7,15 @@ export const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: 'calculadora',
+    redirectTo: 'login',
     pathMatch: 'full',
   },
   {
     path: 'calculadora',
     loadComponent: () => import('./calculadora/calculadora.page').then( m => m.CalculadoraPage)
+  },
+  {
+    path: 'login',
+    loadComponent: () => import('./login/login.page').then( m => m.LoginPage)
   },
 ];
