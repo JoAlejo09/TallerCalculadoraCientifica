@@ -52,25 +52,38 @@ export class CalculadoraPage {
 
     } else if(op =='pow2'){
       this.result = Math.pow(a,2);
+      this.operation='cuadrado'
     } else if(op = 'pow3'){
       this.result = Math.pow(a,3);
+      this.operation='cubo'
+
     } else if(op='sin'){
-      this.result = Math.sin(a); 
+      this.result = Math.sin(a);
+      this.operation='seno'
+ 
     } else if(op='cos'){
-      this.result = Math.cos(a); 
+      this.result = Math.cos(a);
+      this.operation='coseno'
+ 
     } else if(op='tan'){
-      this.result = Math.tan(a); 
+      this.result = Math.tan(a);
+      this.operation='tangente'
+ 
     } else if(op='log2'){
       if(a<1){
           this.operation = 'Error: valores inválidos';
           this.result=0; 
       }
       this.result = Math.log2(a);
+      this.operation='log2'
+
     } else if(op='ln'){
       if(a<1){
           this.operation = 'Error: valores inválidos';
           this.result=0;    
       }
       this.result = Math.log(a);
+      this.operation='ln'
+
     }
   }}
