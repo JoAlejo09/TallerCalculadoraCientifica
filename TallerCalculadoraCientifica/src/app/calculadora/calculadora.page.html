@@ -1,13 +1,49 @@
-<ion-header [translucent]="true">
+<ion-header>
   <ion-toolbar>
-    <ion-title>calculadora</ion-title>
+    <ion-title>Calculadora Cientifica</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">calculadora</ion-title>
-    </ion-toolbar>
-  </ion-header>
-</ion-content>
+<ion-content class="ion-padding">
+  <ion-item>
+    <ion-label position="stacked">Número 1</ion-label>
+    <ion-input type="number" [(ngModel)]="num1"></ion-input>
+  </ion-item>
+
+  <ion-item class="ion-margin-top">
+    <ion-label position="stacked">Número 2</ion-label>
+    <ion-input type="number" [(ngModel)]="num2"></ion-input>
+  </ion-item>
+ <ion-grid>
+  <ion-row size="4">
+    <ion-col><ion-button expand="block" class="ion-margin-top" (click)="calculate('sum')">+</ion-button></ion-col>
+    <ion-col><ion-button expand="block" class="ion-margin-top" (click)="calculate('sub')">-</ion-button></ion-col>
+    <ion-col><ion-button expand="block" class="ion-margin-top" (click)="calculate('mul')">*</ion-button></ion-col>
+    <ion-col><ion-button expand="block" class="ion-margin-top" (click)="calculate('div')">/</ion-button></ion-col>
+  </ion-row>
+  <ion-row size="4">
+    <ion-col><ion-button expand="block" class="ion-margin-top" (click)="calculate('sqr')">√</ion-button></ion-col>
+    <ion-col><ion-button expand="block" class="ion-margin-top" (click)="calculate('pow2')">²</ion-button></ion-col>
+    <ion-col><ion-button expand="block" class="ion-margin-top" (click)="calculate('pow3')">³</ion-button></ion-col>
+    <ion-col><ion-button expand="block" class="ion-margin-top" (click)="calculate('sin')">sen()</ion-button></ion-col>
+  </ion-row>
+  <ion-row size="4">
+    <ion-col><ion-button expand="block" class="ion-margin-top" (click)="calculate('cos')">cos()</ion-button></ion-col>
+    <ion-col><ion-button expand="block" class="ion-margin-top" (click)="calculate('tan')">tan()</ion-button></ion-col>
+    <ion-col><ion-button expand="block" class="ion-margin-top" (click)="calculate('log2')">log₂</ion-button></ion-col>
+    <ion-col><ion-button expand="block" class="ion-margin-top" (click)="calculate('ln')">ln</ion-button></ion-col>
+   
+  </ion-row>
+  
+</ion-grid>
+  <ion-card *ngIf="result !== null" class="ion-margin-top">
+    <ion-card-header>
+      <ion-card-title>Resultado</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      {{ operation }}: <strong>{{ result }}</strong>
+    </ion-card-content>
+  </ion-card>
+
+
+
